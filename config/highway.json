@@ -1,0 +1,60 @@
+{
+  "project": "Highway_2024_0510 vehicle trace",
+  "data": {
+    "directory": "../Highway_2024_0510/data/data2",
+    "pattern": "*.h5",
+    "dt": 0.002,
+    "dx": 4.083807945251465,
+    "file_slice": [0, -1]
+  },
+  "preprocess": {
+    "decimation": [10, 10],
+    "taper_alpha": 0.2,
+    "lowpass_hz": 2.0,
+    "patch_size": 64,
+    "padding": 16,
+    "padding_value": 128
+  },
+  "model": {
+    "repository": "yolov5",
+    "weight": "ckpt/best.pt",
+    "image_size": [192, 192],
+    "iou_threshold": 0.5,
+    "confidence_threshold": 0.5
+  },
+  "traces": {
+    "1": {
+      "channels": [0, 2000],
+      "delete": [],
+      "figure_size": [56, 8],
+      "clim_rate": 1.0,
+      "associate_threshold": 0.1,
+      "minimum_segments": 1,
+      "output": "../Highway_2024_0510/output/0628_data2/trace_1"
+    },
+    "2": {
+      "channels": [2000, 4050],
+      "delete": [
+        [88, 97],
+        [120, 131],
+        [197, 203],
+        [280, 290],
+        [395, 400],
+        [407, 412],
+        [446, 452],
+        [540, 548],
+        [603, 619],
+        [852, 860],
+        [1210, 1220],
+        [1292, 1302],
+        [1410, 1417],
+        [1550, 1563]
+      ],
+      "figure_size": [56, 8],
+      "clim_rate": 1.0,
+      "associate_threshold": 0.1,
+      "minimum_segments": 1,
+      "output": "../Highway_2024_0510/output/0628_data2/trace_2"
+    }
+  }
+}
